@@ -5,15 +5,17 @@ import prompt from '@ohos.prompt';
 
 @Entry
 @Component
-struct Main {
-  @State button:string='Click a button!'
-  @State large:number=200
-  @State count:number=7
+struct Class2 {
+  @State button: string = 'Click a button!'
+  @State large: number = 200
+  @State count: number = 7
+  @State toggle: boolean = false
+  @State value: number = -1
 
   build() {
     // 使用 Stack 作为根容器
     Stack() {
-      // 主要内容区域
+      // 主要内容区域 - 可滚动
       Column() {
         Scroll() {
           Column() {
@@ -23,15 +25,16 @@ struct Main {
                   .width('30%')
                   .margin(10)
                   .onClick(() => {
-                      this.button='Button 1 clicked.'
+                    this.button = 'Button 1 clicked.'
                   })
                 Button('Button 2')
                   .width('30%')
                   .margin(10)
                   .onClick(() => {
-                      this.button='Button 2 clicked.'
+                    this.button = 'Button 2 clicked.'
                   })
               }
+
               Text(this.button)
                 .width('100%')
                 .textAlign(TextAlign.Center)
@@ -42,10 +45,11 @@ struct Main {
             .width('100%')
             .backgroundColor(Color.Gray)
             .borderRadius($r('sys.float.corner_radius_level4'))
+
             Divider()
               .margin(10)
 
-            Text('视频')
+            Text('国庆作业')
               .textAlign(TextAlign.Start)
               .fontWeight(800)
               .fontSize(25)
@@ -56,11 +60,13 @@ struct Main {
               Image($r('app.media.wuhan'))
                 .alt('wuhan')
                 .width('100%')
+                .borderRadius($r('sys.float.corner_radius_level5'))
 
               Text('你好，武汉')
-                .fontColor('#ff24207a')
-                .fontSize(40)
+                .fontColor('#ff1a3667')
+                .fontSize(50)
                 .fontWeight(900)
+
 
               Row() {
                 Text('播放量：500万')
@@ -70,14 +76,13 @@ struct Main {
                 Text('弹幕量：121万')
                   .fontColor(Color.White)
               }
-              .position({ x: '8%', y: '80%' })
+              .position({ x: '2%', y: '90%' })
             }
             .borderRadius($r('sys.float.corner_radius_level4'))
             .backgroundColor(Color.Gray)
-            .width('90%')
+            .width('95%')
             .aspectRatio(1.5)
             .margin(10)
-
 
             Divider()
               .margin(20)
@@ -100,32 +105,33 @@ struct Main {
                   .margin(10)
                   .backgroundColor(Color.Red)
                   .onClick(() => {
-                    if (this.large <= 100) {
+                    if (this.large <= 160) {
                       prompt.showToast({
                         message: '不能再缩小啦',
                         duration: 1000
                       });
                       return
                     }
-                    this.large -= 30
+                    this.large -= 20
                   })
                 Button('+')
                   .margin(10)
                   .backgroundColor(Color.Red)
                   .onClick(() => {
-                    if (this.large >= 380) {
+                    if (this.large >= 340) {
                       prompt.showToast({
                         message: '不能再放大啦',
                         duration: 1000
                       });
                       return
                     }
-                    this.large += 30
+                    this.large += 20
                   })
-
               }
+
               Image($r('app.media.pic'))
                 .width(this.large)
+                .borderRadius($r('sys.float.corner_radius_level4'))
             }
             .width('100%')
             .borderRadius($r('sys.float.corner_radius_level4'))
@@ -157,33 +163,97 @@ struct Main {
                   .onClick(() => {
                     this.count += 10
                   })
-
               }
+
               Text(`count=${this.count}`)
-              if(this.count>0){Text('Positive').fontColor(Color.Green)}
-              if(this.count<0){Text('Negative').fontColor(Color.Red)}
-              if(this.count==0){Text('Zero').fontColor(Color.Blue)}
+              if (this.count > 0) {
+                Text('Positive').fontColor(Color.Green)
+              }
+              if (this.count < 0) {
+                Text('Negative').fontColor(Color.Red)
+              }
+              if (this.count == 0) {
+                Text('Zero').fontColor(Color.Blue)
+              }
             }
             .margin(10)
             .width('100%')
             .borderRadius($r('sys.float.corner_radius_level4'))
             .backgroundColor(Color.Gray)
 
+            Column() {
+              Row() {
+                if (this.toggle) {
+                  Text('').fontColor(Color.Green)
+                } else {
+                  Text('').fontColor(Color.Black)
+                }
+              }
+              .width('100%')
+              .padding({ left: '10', right: '10' })
+            }
+            .margin(10)
+            .width('100%')
+            .borderRadius($r('sys.float.corner_radius_level4'))
+            .backgroundColor(Color.Gray)
+
+            Column({ space: 20 }) {
+              Text('考试结果查询')
+                .margin(10)
+                .width('100%')
+                .fontSize(25)
+                .fontWeight(800)
+
+              TextInput({ placeholder: '输入成绩' })
+                .onChange((value) => {
+                  this.value = value.length == 0 ? 1 : Number.parseInt(value);
+                })
+
+              if (this.value < 0) {
+                Row() {
+                  Text('考试结果：')
+                  Text('未开始')
+                  Blank()
+                }
+              }
+              if (this.value >= 0 && this.value < 60) {
+                Row() {
+                  Text('考试结果：')
+                  Text('未通过').fontColor(Color.Red)
+                  Blank()
+                }
+              }
+              if (this.value >= 60 && this.value <= 100) {
+                Row() {
+                  Text('考试结果：')
+                  Text('通过').fontColor(Color.Green)
+                  Blank()
+                }
+              }
+              if (this.value > 100) {
+                Row() {
+                  Text('考试结果：')
+                  Text('输入不符合规范').fontColor(Color.Red)
+                  Blank()
+                }
+              }
+              Column(){Text('').margin(10)}
+            }
+            .margin(10)
+            .width('100%')
+            .borderRadius($r('sys.float.corner_radius_level4'))
+            .backgroundColor(Color.Gray)
           }
-          .backgroundColor(Color.Transparent)
-          .width('90%')
-          .padding(10)
-          .margin(20)
-          .alignItems(HorizontalAlign.Center)
+          .width('100%')
+          .backgroundColor(Color.White)
         }
-        .width('100%')
+        .width('95%')
         .height('100%')
-        .backgroundColor(Color.White)
       }
-      .width('100%')
+      .width('95%')
       .height('100%')
 
-      // 悬浮按钮 - 定位到左下角
+      // 悬浮按钮 - 放在 Stack 中，与主要内容区域平级
       Button() {
         Image($r('app.media.back'))
           .width(24)
@@ -205,7 +275,7 @@ struct Main {
         offsetY: 4
       })
       .stateEffect(true)
-      .position({ // 使用绝对定位
+      .position({
         x: 20, // 距离左边20vp
         y: '90%' // 距离顶部90%，即靠近底部
       })
