@@ -20,6 +20,11 @@ struct Class2 {
         Scroll() {
           Column() {
             Column() {
+              Text('左右切换')
+                .margin(10)
+                .width('100%')
+                .fontSize(25)
+                .fontWeight(800)
               Row() {
                 Button('Button 1')
                   .width('30%')
@@ -50,11 +55,10 @@ struct Class2 {
               .margin(10)
 
             Text('国庆作业')
-              .textAlign(TextAlign.Start)
-              .fontWeight(800)
-              .fontSize(25)
-              .width('100%')
               .margin(10)
+              .width('100%')
+              .fontSize(25)
+              .fontWeight(800)
 
             Stack() {
               Image($r('app.media.wuhan'))
@@ -88,8 +92,8 @@ struct Class2 {
               .margin(20)
 
             Column() {
-              Text(' 调整大小')
-                .margin(10)
+              Text('调整大小')
+                .margin({ left: 20, right: 10, top: 10, bottom:10 })
                 .width('100%')
                 .fontSize(25)
                 .fontWeight(800)
@@ -197,6 +201,9 @@ struct Class2 {
             .borderRadius($r('sys.float.corner_radius_level4'))
             .backgroundColor(Color.Gray)
 
+            Divider()
+              .margin(20)
+
             Column({ space: 20 }) {
               Text('考试结果查询')
                 .margin(10)
@@ -212,7 +219,7 @@ struct Class2 {
               if (this.value < 0) {
                 Row() {
                   Text('考试结果：')
-                  Text('未开始')
+                  Text('请输入成绩')
                   Blank()
                 }
               }
@@ -243,6 +250,41 @@ struct Class2 {
             .width('100%')
             .borderRadius($r('sys.float.corner_radius_level4'))
             .backgroundColor(Color.Gray)
+
+            Divider()
+              .margin(20)
+
+            Column(){
+              Text('渲染控制')
+                .margin(10)
+                .width('100%')
+                .fontSize(25)
+                .fontWeight(800)
+              Row() {
+                Button('抽奖')
+                  .onClick(() => {
+                    router.pushUrl({ url: 'pages/Class2/lottery' }).then(() => {
+                      console.info('Succeeded in jumping to the lottery page.')
+                    })
+                  })
+                  .backgroundColor(Color.Orange)
+                  .margin(20)
+                Button('登陆')
+                  .onClick(() => {
+                    router.pushUrl({ url: 'pages/Class2/login' }).then(() => {
+                      console.info('Succeeded in jumping to the login page.')
+                    })
+                  })
+                  .backgroundColor(Color.Orange)
+                  .margin(20)
+              }
+              .margin(10)
+            }
+            .margin(10)
+            .width('100%')
+            .borderRadius($r('sys.float.corner_radius_level4'))
+            .backgroundColor(Color.Gray)
+
           }
           .width('100%')
           .backgroundColor(Color.White)

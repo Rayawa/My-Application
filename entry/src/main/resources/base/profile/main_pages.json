@@ -3,6 +3,8 @@
     "pages/Index",
     "pages/Class1",
     "pages/Class2",
-    "pages/Class3"
+    "pages/Class3",
+    "pages/Class2/lottery",
+    "pages/Class2/login"
   ]
 }
