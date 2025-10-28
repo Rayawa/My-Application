@@ -10,6 +10,11 @@ struct PasswordPage {
 
   build() {
     Column() {
+      Text('进入抽奖页面')
+        .fontColor(Color.Red)
+        .fontSize(30)
+        .fontWeight(600)
+        .margin({bottom:20})
       TextInput({ placeholder: '请输入密码', text: this.userInputPassword })
         .width('80%')
         .height(40)
@@ -41,6 +46,9 @@ struct PasswordPage {
       }).catch((err: Error) => {
         console.error(`跳转失败，错误信息: ${err}`)
       })
+      prompt.showToast({
+        message: '跳转成功！',
+        duration: 2000})
     } else {
       prompt.showToast({
         message: '密码不正确',
