@@ -2,8 +2,8 @@
 @Component
 struct LotteryGame {
   // 奖品数据
-  @State prizes: string[] = ['一等奖', '二等奖', '三等奖', '谢谢参与', '幸运奖', '特别奖', '纪念奖', '再来一次']
-  @State colors: string[] = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD', '#98D8C8', '#F7DC6F']
+  @State prizes: string[] = ['一等奖', '二等奖', '三等奖', '谢谢参与', '幸运奖', '再来一次']
+  @State colors: string[] = ['#fffd8686', '#ffab9b53', '#ff4ad145', '#ff3291b8', '#FFEAA7', '#DDA0DD']
 
   // 转盘相关状态
   @State isSpinning: boolean = false
@@ -52,7 +52,7 @@ struct LotteryGame {
           .height(300)
           .margin({ top: 10, bottom: 10 })
 
-          Button(this.isGridSpinning ? '抽奖中...' : '九宫格抽奖')
+          Button(this.isGridSpinning ? '抽奖中...' : '开始抽奖')
             .width(150)
             .height(40)
             .backgroundColor(this.isGridSpinning ? '#CCC' : '#007DFF')
@@ -111,7 +111,6 @@ struct LotteryGame {
           }
         }
         .width('100%')
-        .height('100%')
         .padding(20)
         .backgroundColor('#F8F8F8')
         .alignItems(HorizontalAlign.Center)
@@ -141,7 +140,7 @@ struct LotteryGame {
         // 最终停在随机位置
         this.activeIndex = randomIndex
         this.gridResult = `恭喜获得：${this.prizes[randomIndex]}`
-        this.history.unshift(`九宫格抽奖 - ${this.prizes[randomIndex]}`)
+        this.history.unshift(`幸运抽奖 - ${this.prizes[randomIndex]}`)
         this.isGridSpinning = false
       }
     }, 100)
