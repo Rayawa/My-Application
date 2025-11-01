@@ -8,7 +8,7 @@
     "pages/Class4",
     "pages/Class2/lottery",
     "pages/Class2/login",
-    "pages/Class3/airConditioner",
-    "pages/Class3/lazyForEach"
+    "pages/Class3/lazyForEach",
+    "pages/Class3/airConditioner"
   ]
 }
