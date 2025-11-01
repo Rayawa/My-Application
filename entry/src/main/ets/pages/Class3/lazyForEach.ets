@@ -6,7 +6,7 @@ struct LazyForEachFirst {
   private data: MyDataSource = new MyDataSource();
 
   aboutToAppear() {
-    for (let i = 0; i <= 20; i++) {
+    for (let i = 0; i <= 70; i++) {
       this.data.pushData(`Hello ${i}`)
     }
   }
@@ -16,7 +16,9 @@ struct LazyForEachFirst {
       LazyForEach(this.data, (item: string) => {
         ListItem() {
           Row() {
-            Text(item).fontSize(50)
+            Text(item)
+              .fontSize(30)
+              .margin({left:10})
 
           }.margin({ left: 10, right: 10 })
         }
