@@ -24,7 +24,7 @@ struct SonComponent {
 struct Class3 {
   @State count2: number = 0;
   @Builder
-  myline(){
+  myLine(){
     Text('1').height(50).width('33%').fontSize(16).backgroundColor(0xF5DEB3).textAlign(TextAlign.Start)
     Text('2').height(50).width('33%').fontSize(16).backgroundColor(0xD2B48C).textAlign(TextAlign.Center)
     Text('3').height(50).width('33%').fontSize(16).backgroundColor(0xF5DEB3).textAlign(TextAlign.End)
@@ -125,12 +125,11 @@ struct Class3 {
               .margin(20)
 
             Column({ space: 10 }) {
-              Row() {  this.myline();  }
+              Row() {  this.myLine();  }
               .width('90%')
               .direction(Direction.Auto)
-
               // 父容器设置direction为Direction.Rtl，子元素从右到左排列
-              Row() {  this.myline();    }
+              Row() {  this.myLine();    }
               .width('90%')
               .direction(Direction.Rtl)
             }
@@ -183,24 +182,49 @@ struct Class3 {
               .margin(20)
 
             Column({ space: 5 }) {
-              Row().width('90%').height(50).backgroundColor(0xE5E5E5).border({ width: 1 })
+              Row()
+                .width('90%')
+                .height(50)
+                .backgroundColor(0xE5E5E5)
+                .border({ width: 1 })
               Row()
                 .backgroundImage($r('app.media.wuhan'), ImageRepeat.X)
                 .backgroundImageSize({ width: '250px', height: '140px' })
-                .width('90%').height(70).border({ width: 1 })
+                .width('90%').height(70)
+                .border({ width: 1 })
               Row()
                 .backgroundImage($r('app.media.wuhan'), ImageRepeat.Y)
                 .backgroundImageSize({ width: '500px', height: '120px' })
-                .width('90%').height(100).border({ width: 1 })
+                .width('90%').height(100)
+                .border({ width: 1 })
               Row()
-                .width(200).height(50) .backgroundImage($r('app.media.wuhan'), ImageRepeat.NoRepeat)
-                .backgroundImageSize(ImageSize.Cover).border({ width: 1 })
-            }.width('100%').height('100%').padding({ top: 5 })
+                .width(200)
+                .height(50)
+                .backgroundImage($r('app.media.wuhan'), ImageRepeat.NoRepeat)
+                .backgroundImageSize(ImageSize.Cover)
+                .border({ width: 1 })
+            }
+            .width('100%')
+            .height('100%')
+            .padding({ top: 5 })
 
           Divider()
             .margin(20)
 
-        }
+          Column({space:10}) {
+              // 点击没有反应
+              Button('disable').fontSize(50).enabled(false).backgroundColor(Color.Gray).opacity(0.4)
+              Button('enable').fontSize(50).backgroundColor(Color.Blue)
+          }
+          .margin( 10 )
+          .width('100%')
+          .alignItems(HorizontalAlign.Center)
+
+          Divider()
+            .margin(20)
+
+
+          }
           .width('100%')
           .backgroundColor(Color.White)
         }

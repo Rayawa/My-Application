@@ -1,10 +1,10 @@
 @Entry
 @Component
-
 struct ControlPanel {
   @State currentWindSpeed: number = 3
   @State currentTemperature: number = 25
   @State isPowerOn: boolean = true
+
   private getTemperatureColor(temp: number): string {
     const clampedTemp = Math.max(16, Math.min(30, temp))
     const ratio = (clampedTemp - 16) / (30 - 16)
@@ -17,21 +17,35 @@ struct ControlPanel {
 
     return `#ff${R_hex}00${B_hex}`
   }
+
   build() {
     Column({ space: 5 }) {
-      // 标题
       Text('空调控制器')
         .fontSize(24)
         .fontWeight(FontWeight.Bold)
         .margin({ top: 15, bottom: 10 })
+
       this.PowerSwitch()
-      Image($r('app.media.air_conditioner'))
-        .width(200)
-        .height(200)
-        .borderRadius($r('sys.float.corner_radius_level7'))
-        .margin({bottom:30})
-      this.WindSpeedControl()
-      this.TemperatureControl()
+
+      Column() {
+        Image(this.isPowerOn ? $r('app.media.air_conditioner') : $r('app.media.air_conditioner_close'))
+          .width(120)
+          .height(120)
+          .borderRadius($r('sys.float.corner_radius_level7'))
+      }
+      .width(200)
+      .height(200)
+      .margin({bottom:30})
+      .justifyContent(FlexAlign.Center)
+      .alignItems(HorizontalAlign.Center)
+      .backgroundColor(Color.White)
+      .borderRadius($r('sys.float.corner_radius_level7'))
+
+      if (this.isPowerOn) {
+        this.WindSpeedControl()
+        Column().margin(10)
+        this.TemperatureControl()
+      }
     }
     .width('100%')
     .height('100%')
@@ -54,7 +68,7 @@ struct ControlPanel {
     .margin({ top: 10, bottom: 15 })
   }
 
-@Builder
+  @Builder
   WindSpeedControl() {
     Text('风速控制')
       .fontSize(18)
@@ -62,36 +76,45 @@ struct ControlPanel {
       .width('100%')
       .textAlign(TextAlign.Start)
     Column() {
-      // Text(`档位: ${this.currentWindSpeed}`)
-      //   .fontSize(16)
-      //   .fontColor('#007DFF')
       Row({ space: 10 }) {
-        Image($r('app.media.speed_low'))
-          .width(15)
-          .height(15)
+        Column() {
+          Image($r('app.media.speed_low'))
+            .width(15)
+        }
+        .width(30)
+        .height(30)
+        .justifyContent(FlexAlign.Center)
+        .alignItems(HorizontalAlign.Center)
+        .backgroundColor(Color.White)
 
         Slider({
           value: this.currentWindSpeed,
           min: 1,
           max: 5,
           step: 1,
-          style: SliderStyle.OutSet
+          style: SliderStyle.InSet
         })
+          .selectedColor('#ffE9EAEC')
           .width('75%')
           .onChange((value: number) => {
             if (this.isPowerOn) {
               this.currentWindSpeed = Math.round(value)
             }
           })
-
-        Image($r('app.media.speed_high'))
-          .width(15)
-          .height(15)
+        Column() {
+          Image($r('app.media.speed_high'))
+            .width(15)
+        }
+        .width(30)
+        .height(30)
+        .justifyContent(FlexAlign.Center)
+        .alignItems(HorizontalAlign.Center)
+        .backgroundColor(Color.White)
       }
       .width('100%')
       .justifyContent(FlexAlign.SpaceBetween)
 
-      Row({ space: 8 }) {
+      Row({ space: 35 }) {
         Text('低')
           .fontSize(12)
           .fontColor(this.currentWindSpeed === 1 ? '#007DFF' : '#999999')
@@ -109,7 +132,7 @@ struct ControlPanel {
           .fontColor(this.currentWindSpeed === 5 ? '#007DFF' : '#999999')
       }
       .width('80%')
-      .justifyContent(FlexAlign.SpaceBetween)
+      .justifyContent(FlexAlign.Center)
       .margin({ top: 5 })
     }
     .padding(15)
@@ -151,8 +174,10 @@ struct ControlPanel {
           min: 16,
           max: 30,
           step: 1,
-          style: SliderStyle.OutSet
+          style: SliderStyle.InSet
         })
+          .selectedColor(this.getTemperatureColor(this.currentTemperature))
+          .trackColor(this.getTemperatureColor(this.currentTemperature))
           .width('75%')
           .onChange((value: number) => {
             if (this.isPowerOn) {
@@ -179,5 +204,5 @@ struct ControlPanel {
       bottom: 5
     })
     .width('100%')
-
-  }}
+  }
+}
