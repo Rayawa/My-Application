@@ -21,6 +21,7 @@ struct Class2 {
           Column() {
             Column() {
               Text('左右切换')
+                .margin({ left: 20, right: 10, top: 10, bottom:10 })
                 .margin(10)
                 .width('100%')
                 .fontSize(25)
@@ -55,7 +56,7 @@ struct Class2 {
               .margin(10)
 
             Text('国庆作业')
-              .margin(10)
+              .margin({ left: 20, right: 10, top: 10, bottom:10 })
               .width('100%')
               .fontSize(25)
               .fontWeight(800)
@@ -206,7 +207,7 @@ struct Class2 {
 
             Column({ space: 20 }) {
               Text('考试结果查询')
-                .margin(10)
+                .margin({ left: 20, right: 10, top: 10, bottom:10 })
                 .width('100%')
                 .fontSize(25)
                 .fontWeight(800)
@@ -256,7 +257,7 @@ struct Class2 {
 
             Column(){
               Text('渲染控制')
-                .margin(10)
+                .margin({ left: 20, right: 10, top: 10, bottom:10 })
                 .width('100%')
                 .fontSize(25)
                 .fontWeight(800)
@@ -304,7 +305,7 @@ struct Class2 {
       }
       .onClick(() => {
         router.back()
-        console.info('Succeeded in jumping to the index page.')
+        console.info('Succeeded jumping back.')
       })
       .type(ButtonType.Circle)
       .backgroundColor($r('sys.color.point_color_checked'))
