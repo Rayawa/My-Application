@@ -39,6 +39,17 @@ struct Class3 {
             .width('100%')
             .borderRadius($r('sys.float.corner_radius_level4'))
             .backgroundColor(Color.Gray)
+
+            Divider()
+              .margin(30)
+
+            Column(){
+
+            }
+            .margin(10)
+            .width('100%')
+            .borderRadius($r('sys.float.corner_radius_level4'))
+            .backgroundColor(Color.Gray)
           }
           .width('100%')
           .height('100%')
