@@ -95,7 +95,7 @@ struct Index {
 
           // 第三行数据
           Row() {
-            Text('第111章')
+            Text('第五六章')
               .layoutWeight(1)
               .textAlign(TextAlign.Center)
               .border({ width: 0 })
@@ -108,6 +108,30 @@ struct Index {
               .onClick(() => {
                 router.pushUrl({ url: 'pages/Class3' }).then(() => {
                   console.info('Succeeded in jumping to the Class3 page.')
+                })
+              })
+              .height(30)
+              .backgroundColor(Color.Orange)
+          }
+          .width('100%')
+          .height(50)
+          .justifyContent(FlexAlign.SpaceBetween)
+
+          //第四行数据
+          Row() {
+            Text('第111章')
+              .layoutWeight(1)
+              .textAlign(TextAlign.Center)
+              .border({ width: 0 })
+            Text('2025/11/01')
+              .layoutWeight(1)
+              .textAlign(TextAlign.Center)
+              .border({ width: 0 })
+            Button('Class4')
+              .layoutWeight(1)
+              .onClick(() => {
+                router.pushUrl({ url: 'pages/Class4' }).then(() => {
+                  console.info('Succeeded in jumping to the Class4 page.')
                 })
               })
               .height(30)

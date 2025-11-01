@@ -1,10 +1,13 @@
 {
   "src": [
     "pages/Index",
+    "pages/demo",
     "pages/Class1",
     "pages/Class2",
     "pages/Class3",
+    "pages/Class4",
     "pages/Class2/lottery",
-    "pages/Class2/login"
+    "pages/Class2/login",
+    "pages/Class3/airConditioner"
   ]
 }

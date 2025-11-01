@@ -173,7 +173,7 @@ struct Second {
       }
       .onClick(() => {
         router.back()
-        console.info('Succeeded in jumping to the index page.')
+        console.info('Succeeded jumping back.')
       })
       .type(ButtonType.Circle)
       .backgroundColor($r('sys.color.point_color_checked'))
