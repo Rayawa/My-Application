@@ -1,5 +1,4 @@
 import { router } from '@kit.ArkUI';
-import sendableColorSpaceManager from '@ohos.graphics.sendableColorSpaceManager';
 
 @Entry
 @Component

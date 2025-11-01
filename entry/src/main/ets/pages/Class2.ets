@@ -1,6 +1,4 @@
-import { media } from '@kit.MediaKit'
 import { router } from '@kit.ArkUI'
-import { webview } from '@kit.ArkWeb';
 import prompt from '@ohos.prompt';
 
 @Entry
@@ -22,7 +20,6 @@ struct Class2 {
             Column() {
               Text('左右切换')
                 .margin({ left: 20, right: 10, top: 10, bottom:10 })
-                .margin(10)
                 .width('100%')
                 .fontSize(25)
                 .fontWeight(800)
