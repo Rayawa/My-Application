@@ -1,8 +1,28 @@
-import { router } from '@kit.ArkUI';
+import { pluginComponentManager, router } from '@kit.ArkUI';
+@Component
+struct SonComponent {
+  @Prop count: number;
+  //@Link count: number;
+
+  build() {
+    Column() {
+      Row() {
+        Button(`子组件计数+1`).onClick(() => {
+          this.count++;
+        }).backgroundColor(Color.Orange)
+        Text(`  子组件计数： ${this.count}`)
+          .fontWeight(600)
+          .fontSize(18)
+      }
+      .margin({bottom:10})
+    }
+  }
+}
 
 @Entry
 @Component
 struct Class3 {
+  @State count2: number = 0;
 
   build() {
     Stack() {
@@ -12,7 +32,12 @@ struct Class3 {
           Column() {
             Column() {
               Text("11111111")
-                .margin({ left: 20, right: 10, top: 10, bottom:10 })
+                .margin({
+                  left: 20,
+                  right: 10,
+                  top: 10,
+                  bottom: 10
+                })
                 .width('100%')
                 .fontSize(25)
                 .fontWeight(800)
@@ -43,8 +68,28 @@ struct Class3 {
             Divider()
               .margin(30)
 
-            Column(){
+            Column() {
+              Text("父子组件")
+                .margin({
+                  left: 20,
+                  right: 10,
+                  top: 10,
+                  bottom: 10
+                })
+                .width('100%')
+                .fontSize(25)
+                .fontWeight(800)
+              Row() {
+                Button(`父组件计数+1`).onClick(() => {
+                  this.count2 += 1;
+                }).backgroundColor(Color.Orange)
 
+                Text(`  父组件计数： ${this.count2}`)
+                  .fontWeight(600)
+                  .fontSize(18)
+              }
+              .margin({bottom:10})
+              SonComponent({ count: this.count2 })
             }
             .margin(10)
             .width('100%')
