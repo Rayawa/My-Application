@@ -1,4 +1,4 @@
-import { pluginComponentManager, router } from '@kit.ArkUI';
+import { router } from '@kit.ArkUI';
 @Component
 struct SonComponent {
   @Prop count: number;
@@ -31,12 +31,10 @@ struct Class3 {
         Scroll() {
           Column() {
             Column() {
-              Text("11111111")
+              Text("Class3")
                 .margin({
                   left: 20,
-                  right: 10,
-                  top: 10,
-                  bottom: 10
+                  top:10
                 })
                 .width('100%')
                 .fontSize(25)
@@ -66,15 +64,13 @@ struct Class3 {
             .backgroundColor(Color.Gray)
 
             Divider()
-              .margin(30)
+              .margin(20)
 
             Column() {
               Text("父子组件")
                 .margin({
                   left: 20,
-                  right: 10,
                   top: 10,
-                  bottom: 10
                 })
                 .width('100%')
                 .fontSize(25)
