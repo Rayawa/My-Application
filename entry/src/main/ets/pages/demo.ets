@@ -1,5 +1,4 @@
 import { prompt, router } from '@kit.ArkUI';
-import { BusinessError } from '@kit.BasicServicesKit';
 
 @Entry
 @Component
