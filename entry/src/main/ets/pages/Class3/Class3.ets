@@ -46,6 +46,14 @@ struct Class3 {
                 .fontSize(25)
                 .fontWeight(800)
               Row() {
+                Button('笔记')
+                  .onClick(() => {
+                    router.pushUrl({ url: 'pages/Notes/Chapter5' }).then(() => {
+                      console.info('Succeeded in jumping to Chapter 5.')
+                    })
+                  })
+                  .backgroundColor(Color.Orange)
+                  .margin(20)
                 Button('空调遥控器')
                   .onClick(() => {
                     router.pushUrl({ url: 'pages/Class3/airConditioner' }).then(() => {
