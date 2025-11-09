@@ -25,7 +25,8 @@
     "pages/Demo/demo_touch",
     "pages/Demo/demo_radio",
     "pages/Demo/demo_focus",
-    "pages/Demo/demo_button"
+    "pages/Demo/demo_button",
+    "pages/Demo/demo_toggle"
 
 
   ]

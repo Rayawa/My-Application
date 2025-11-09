@@ -216,6 +216,80 @@ struct Chapter6 {
         .width('100%')
         .justifyContent(FlexAlign.SpaceBetween)
 
+        Column() {
+          Text('Toggle组件')
+            .textAlign(TextAlign.Start)
+            .fontSize(22)
+            .fontWeight(900)
+            .width('100%')
+            .margin({left:20,top:10,right:10,bottom:10})
+
+          // 第一行数据
+          Row() {
+            Text('Toggle组件概述')
+              .layoutWeight(1)
+              .fontWeight(800)
+              .textAlign(TextAlign.Center)
+              .margin(5)
+            Text('用于在两个状态之间进行切换的组件，常用于表示开关或复选框的状态')
+              .layoutWeight(1)
+              .textAlign(TextAlign.Center)
+              .margin(5)
+              .fontSize(12)
+            Text('type: ToggleType {Checkbox, Button, Switch}')
+              .layoutWeight(1)
+              .fontSize(12)
+              .textAlign(TextAlign.Center)
+              .margin(5)
+          }
+          //第二行数据
+          Row() {
+            Text('Toggle组件属性')
+              .layoutWeight(1)
+              .fontWeight(800)
+              .textAlign(TextAlign.Center)
+              .margin(5)
+            Text('selectedColor: ResourceColor \n //设置组件打开状态的背景颜色')
+              .layoutWeight(1)
+              .fontSize(12)
+              .textAlign(TextAlign.Center)
+              .margin(5)
+            Text('switchPointColor: ResourceColor\n //设置Switch类型的圆形滑块颜色。\n')
+              .layoutWeight(1)
+              .fontSize(12)
+              .textAlign(TextAlign.Center)
+              .margin(5)
+
+          }
+          // 第三行数据
+          Row() {
+            Text('Toggle组件事件')
+              .layoutWeight(1)
+              .fontWeight(800)
+              .textAlign(TextAlign.Center)
+              .margin(5)
+            Text('接口：Toggle(options: { type: ToggleType, isOn?: boolean })\n')
+              .layoutWeight(1)
+              .textAlign(TextAlign.Center)
+              .margin(5)
+              .fontSize(12)
+            Button('Button示例')
+              .layoutWeight(1)
+              .onClick(() => {
+                router.pushUrl({ url: 'pages/Demo/demo_toggle' }).then(() => {
+                  console.info('Succeeded in jumping to the toggle page.')
+                })
+              })
+              .backgroundColor(Color.Orange)
+              .margin(5)
+          }
+          .width('100%')
+          .justifyContent(FlexAlign.SpaceBetween)
+        }
+        .padding(20)
+        .width('100%')
+        .justifyContent(FlexAlign.SpaceBetween)
+
         }
       Divider()
     }}
