@@ -235,7 +235,6 @@ struct Class3 {
 
           }
           .width('100%')
-          .backgroundColor(Color.White)
         }
         .height('100%')
       }
@@ -245,6 +244,5 @@ struct Class3 {
     }
     .width('100%')
     .height('100%')
-    .backgroundColor(Color.White)
   }
 }
