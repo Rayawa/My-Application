@@ -1,14 +1,14 @@
 @Entry
 @Component
-struct Textinput {
+struct TextInputExample {
   @State password: string = '';  // 添加 @State 装饰器和初始值
 
   build() {
     Row() {
       Column() {
         TextInput({ placeholder: 'input your password' })
-          .width(400)
-          .height(60)
+          .width(300)
+          .height(40)
           .fontSize(40)
           .margin(20)
           .type(InputType.Password)

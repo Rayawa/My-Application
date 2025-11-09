@@ -1,6 +1,6 @@
 @Entry
 @Component
-struct state {
+struct StateExample {
   @State count:number=0;
   build() {
       Column() {

@@ -11,11 +11,112 @@ struct Chapter6 {
         }
 
         Column() {
-          Text('Chapter 6')
+          Text('Chapter 6\n基础组件开发')
             .fontSize(30)
             .fontWeight(800)
+            .textAlign(TextAlign.Center)
           Divider()
             .margin(10)
+          Column() {
+            Text('一、UI开发概述')
+              .textAlign(TextAlign.Start)
+              .fontSize(22)
+              .fontWeight(900)
+              .width('100%')
+              .margin({
+                left: 20,
+                top: 10,
+                right: 10,
+                bottom: 10
+              })
+          }
+          .padding(20)
+          .width('100%')
+          .justifyContent(FlexAlign.SpaceBetween)
+
+          Column() {
+            Text('二、UI组件通用属性')
+              .textAlign(TextAlign.Start)
+              .fontSize(22)
+              .fontWeight(900)
+              .width('100%')
+              .margin({
+                left: 20,
+                top: 10,
+                right: 10,
+                bottom: 10
+              })
+
+            Row() {
+              Button('尺寸属性')
+                .layoutWeight(1)
+                .onClick(() => {
+                  router.pushUrl({ url: 'pages/Demo/Chapter6/attribute/demo_size' }).then(() => {
+                    console.info('Succeeded in jumping to the size page.')
+                  })
+                })
+                .backgroundColor(Color.Orange)
+                .margin(5)
+              Text('width, height, size, padding, margin, constrainSize').layoutWeight(1).fontSize(12).textAlign(TextAlign.Center).margin(5)
+              Text('用户点击某个UI组件时触发。').layoutWeight(1).fontSize(12).textAlign(TextAlign.Center).margin(5)
+            }
+            Row() {
+              Button('位置属性')
+                .layoutWeight(1)
+                .onClick(() => {
+                  router.pushUrl({ url: 'pages/Demo/Chapter6/attribute/demo_position' }).then(() => {
+                    console.info('Succeeded in jumping to the position page.')
+                  })
+                })
+                .backgroundColor(Color.Orange)
+                .margin(5)
+              Text('align, direction, position, markAnchor, offset, alignRules').layoutWeight(1).fontSize(12).textAlign(TextAlign.Center).margin(5)
+              Text('位置属性用于设置组件的对齐方式、布局方向和显示位置。').layoutWeight(1).fontSize(12).textAlign(TextAlign.Center).margin(5)
+            }
+            Row() {
+              Button('显示/隐藏属性')
+                .layoutWeight(1)
+                .onClick(() => {
+                  router.pushUrl({ url: 'pages/Demo/Chapter6/attribute/demo_visibility' }).then(() => {
+                    console.info('Succeeded in jumping to the visibility page.')
+                  })
+                })
+                .backgroundColor(Color.Orange)
+                .margin(5)
+              Text('visibility: Visibility.{Hidden（占位）, Visible, None（隐藏不占位）}').layoutWeight(1).fontSize(12).textAlign(TextAlign.Center).margin(5)
+              Text('显隐属性用于控制组件是否可见。').layoutWeight(1).fontSize(12).textAlign(TextAlign.Center).margin(5)
+            }
+            Row() {
+              Button('背景属性')
+                .layoutWeight(1)
+                .onClick(() => {
+                  router.pushUrl({ url: 'pages/Demo/Chapter6/attribute/demo_background' }).then(() => {
+                    console.info('Succeeded in jumping to the background page.')
+                  })
+                })
+                .backgroundColor(Color.Orange)
+                .margin(5)
+              Text('backgroundColor, backgroundImage, backgroundImageSize, backgroundImagePosition').layoutWeight(1).fontSize(12).textAlign(TextAlign.Center).margin(5)
+              Text('背景属性用于设置组件的背景样式。').layoutWeight(1).fontSize(12).textAlign(TextAlign.Center).margin(5)
+            }
+            Row() {
+              Button('禁用控制属性')
+                .layoutWeight(1)
+                .onClick(() => {
+                  router.pushUrl({ url: 'pages/Demo/Chapter6/attribute/demo_enable' }).then(() => {
+                    console.info('Succeeded in jumping to the enable page.')
+                  })
+                })
+                .backgroundColor(Color.Orange)
+                .margin(5)
+              Text('enabled: boolean {true, false}').layoutWeight(1).fontSize(12).textAlign(TextAlign.Center).margin(5)
+              Text('禁用属性控制组件是否可以进行交互。').layoutWeight(1).fontSize(12).textAlign(TextAlign.Center).margin(5)
+            }
+
+          }
+          .padding(20)
+          .width('100%')
+          .justifyContent(FlexAlign.SpaceBetween)
 
           Column() {
             Text('三、UI组件通用事件')
@@ -45,7 +146,7 @@ struct Chapter6 {
               Button('onClick示例')
                 .layoutWeight(1)
                 .onClick(() => {
-                  router.pushUrl({ url: 'pages/Demo/demo_click' }).then(() => {
+                  router.pushUrl({ url: 'pages/Demo/Chapter6/demo_click' }).then(() => {
                     console.info('Succeeded in jumping to the click page.')
                   })
                 })
@@ -68,8 +169,8 @@ struct Chapter6 {
               Button('onFocus示例')
                 .layoutWeight(1)
                 .onClick(() => {
-                  router.pushUrl({ url: 'pages/Demo/demo_focus' }).then(() => {
-                    console.info('Succeeded in jumping to the foucs page.')
+                  router.pushUrl({ url: 'pages/Demo/Chapter6/demo_focus' }).then(() => {
+                    console.info('Succeeded in jumping to the focus page.')
                   })
                 })
                 .backgroundColor(Color.Orange)
@@ -93,7 +194,7 @@ struct Chapter6 {
               Button('onTouch示例')
                 .layoutWeight(1)
                 .onClick(() => {
-                  router.pushUrl({ url: 'pages/Demo/demo_touch' }).then(() => {
+                  router.pushUrl({ url: 'pages/Demo/Chapter6/demo_touch' }).then(() => {
                     console.info('Succeeded in jumping to the touch page.')
                   })
                 })
@@ -156,7 +257,7 @@ struct Chapter6 {
               Button('Button示例')
                 .layoutWeight(1)
                 .onClick(() => {
-                  router.pushUrl({ url: 'pages/Demo/demo_button' }).then(() => {
+                  router.pushUrl({ url: 'pages/Demo/Chapter6/demo_button' }).then(() => {
                     console.info('Succeeded in jumping to the button page.')
                   })
                 })
@@ -222,7 +323,7 @@ struct Chapter6 {
               Button('Radio示例')
                 .layoutWeight(1)
                 .onClick(() => {
-                  router.pushUrl({ url: 'pages/Demo/demo_radio' }).then(() => {
+                  router.pushUrl({ url: 'pages/Demo/Chapter6/demo_radio' }).then(() => {
                     console.info('Succeeded in jumping to the radio page.')
                   })
                 })
@@ -303,7 +404,7 @@ struct Chapter6 {
               Button('Toggle示例')
                 .layoutWeight(1)
                 .onClick(() => {
-                  router.pushUrl({ url: 'pages/Demo/demo_toggle' }).then(() => {
+                  router.pushUrl({ url: 'pages/Demo/Chapter6/demo_toggle' }).then(() => {
                     console.info('Succeeded in jumping to the toggle page.')
                   })
                 })
@@ -457,7 +558,7 @@ struct Chapter6 {
                   .fontSize(12)
                   .textAlign(TextAlign.Center)
                   .margin(5)
-                Text('设置文本最小显示字号。需配合maxFontSize以及maxline或布局大小限制使用，单独设置不生效')
+                Text('设置文本最小显示字号。需配合maxFontSize以及maxLine或布局大小限制使用，单独设置不生效')
                   .layoutWeight(1)
                   .fontSize(10)
                   .textAlign(TextAlign.Center)
@@ -471,7 +572,7 @@ struct Chapter6 {
                   .fontSize(12)
                   .textAlign(TextAlign.Center)
                   .margin(5)
-                Text('设置文本最大显示字号。需配合minFontSize以及maxline或布局大小限制使用，单独设置不生效')
+                Text('设置文本最大显示字号。需配合minFontSize以及maxLine或布局大小限制使用，单独设置不生效')
                   .layoutWeight(1)
                   .fontSize(10)
                   .textAlign(TextAlign.Center)
@@ -526,7 +627,7 @@ struct Chapter6 {
               Button('Text示例')
                 .layoutWeight(1)
                 .onClick(() => {
-                  router.pushUrl({ url: 'pages/Demo/demo_text' }).then(() => {
+                  router.pushUrl({ url: 'pages/Demo/Chapter6/demo_text' }).then(() => {
                     console.info('Succeeded in jumping to the text page.')
                   })
                 })
@@ -741,7 +842,7 @@ struct Chapter6 {
               Button('TextInput示例')
                 .layoutWeight(1)
                 .onClick(() => {
-                  router.pushUrl({ url: 'pages/Demo/demo_TextInput' }).then(() => {
+                  router.pushUrl({ url: 'pages/Demo/Chapter6/demo_textInput' }).then(() => {
                     console.info('Succeeded in jumping to the text input page.')
                   })
                 })

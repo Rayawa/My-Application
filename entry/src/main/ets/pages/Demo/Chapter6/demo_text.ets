@@ -1,6 +1,6 @@
 @Entry
 @Component
-struct text {
+struct TextExample {
   @State title: string = '点我';
   build() {
     Column() {

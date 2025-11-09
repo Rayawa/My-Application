@@ -1,6 +1,6 @@
 @Entry
 @Component
-struct radio {
+struct RadioExample {
   build() {
     Row() {
       Column() {
