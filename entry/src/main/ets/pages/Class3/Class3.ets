@@ -234,6 +234,7 @@ struct Class3 {
 
 
           }
+          .margin({top:40})
           .width('100%')
         }
         .height('100%')

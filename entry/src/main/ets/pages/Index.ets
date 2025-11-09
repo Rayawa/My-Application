@@ -6,7 +6,6 @@ import { backButton } from '../Components/backButton'
 struct Index {
   build() {
     Column() {
-      Column(){Text(' ')}
       Column() {
         Text('Ray\'s ArkTS Demo')
           .fontSize(30)
@@ -279,7 +278,7 @@ struct Index {
         // .alignItems(HorizontalAlign.Center)
         // .width('100%')
         // .padding(10)
-      }
+      }.margin({top:50})
 
       Divider()
     }

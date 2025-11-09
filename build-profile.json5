@@ -7,11 +7,11 @@
         "material": {
           "certpath": "/Users/raychen/.ohos/config/default_MyApplication_UTCDkR2aYC58ef0R53lKBpjFBun4l5G4-up7sOQhxwg=.cer",
           "keyAlias": "debugKey",
-          "keyPassword": "0000001BCB7EB41C7A88C0B62FDC281D9461756E3E89B77AD19AF3133C0371D6397B04D0F0059FA0A5A6AD",
+          "keyPassword": "0000001A94124C870C2FC884F5308F3BB39E38191981799C44CD5CE25FE9B772FC20FB9721D763CC90AB",
           "profile": "/Users/raychen/.ohos/config/default_MyApplication_UTCDkR2aYC58ef0R53lKBpjFBun4l5G4-up7sOQhxwg=.p7b",
           "signAlg": "SHA256withECDSA",
           "storeFile": "/Users/raychen/.ohos/config/default_MyApplication_UTCDkR2aYC58ef0R53lKBpjFBun4l5G4-up7sOQhxwg=.p12",
-          "storePassword": "0000001B38E8ED5EF060690AA778209E526E27D48C9092FD49B6E912E107589950E6862C1105C21B818575"
+          "storePassword": "0000001AB69848A201F430A56C6D1642BDADCE433B7CC7DD5917EE013B9198A4FA51DFDA270D731974E4"
         }
       }
     ],
