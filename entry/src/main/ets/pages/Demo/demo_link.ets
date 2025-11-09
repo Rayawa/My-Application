@@ -14,7 +14,6 @@ struct SonComponent {
   }
 }
 
-
 @Entry
 @Component
 struct ParentComponent {

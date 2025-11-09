@@ -2,7 +2,7 @@ import promptAction from '@ohos.promptAction';
 
 @Entry
 @Component
-struct Index {
+struct toggle {
   build() {
     Row() {
       Column() {
