@@ -28,7 +28,7 @@ struct Chapter6 {
               .fontWeight(800)
               .textAlign(TextAlign.Center)
               .margin(5)
-            Text('')
+            Text('用户点击某个UI组件时触发。')
               .layoutWeight(1)
               .fontSize(12)
               .textAlign(TextAlign.Center)
@@ -50,12 +50,12 @@ struct Chapter6 {
               .layoutWeight(1)
               .textAlign(TextAlign.Center)
               .margin(5)
-            Text('')
+            Text('点击、键盘导航或通过其他方式将焦点设置到某个UI组件上。\n 通过为UI组件添加onFocus和onBlur属性来指定焦点事件的处理函数。')
               .layoutWeight(1)
               .fontSize(12)
               .textAlign(TextAlign.Center)
               .margin(5)
-            Button('onFocus/onBlur示例')
+            Button('onFocus示例')
               .layoutWeight(1)
               .onClick(() => {
                 router.pushUrl({ url: 'pages/Demo/demo_focus' }).then(() => {
@@ -75,7 +75,7 @@ struct Chapter6 {
               .fontWeight(800)
               .textAlign(TextAlign.Center)
               .margin(5)
-            Text('')
+            Text('用户触摸屏幕上的UI组件时触发，实现与用户的手势交互和触摸操作相关的功能。')
               .layoutWeight(1)
               .textAlign(TextAlign.Center)
               .margin(5)
@@ -96,8 +96,10 @@ struct Chapter6 {
           .padding(20)
           .width('100%')
           .justifyContent(FlexAlign.SpaceBetween)
+
+
         Column() {
-          Text('Prop父子单向同步装饰器')
+          Text('Button组件')
             .textAlign(TextAlign.Start)
             .fontSize(22)
             .fontWeight(900)
@@ -106,63 +108,44 @@ struct Chapter6 {
 
           // 第一行数据
           Row() {
-            Text('Prop装饰器概述')
+            Text('Button组件概述')
               .layoutWeight(1)
               .fontWeight(800)
               .textAlign(TextAlign.Center)
               .margin(5)
-            Text('父组件数据源修改时，所有Prop装饰都会更新，子组件本地值会因为父组件的修改而被覆盖')
+            Text('type: ButtonType {Capsule, Circle, Normal}')
               .layoutWeight(1)
               .fontSize(12)
               .textAlign(TextAlign.Center)
               .margin(5)
-            Button('Prop示例')
+            Text('stateEffect: boolean\n //按钮按下时是否开启按压态显示效果')
+              .layoutWeight(1)
+              .fontSize(12)
+              .textAlign(TextAlign.Center)
+              .margin(5)
+
+          }
+
+          // 第二行数据
+          Row() {
+            Text('Button组件事件')
+              .layoutWeight(1)
+              .fontWeight(800)
+              .textAlign(TextAlign.Center)
+              .margin(5)
+            Text('接口：Button(options?: {type?: ButtonType, stateEffect?: boolean})')
+              .layoutWeight(1)
+              .textAlign(TextAlign.Center)
+              .margin(5)
+              .fontSize(12)
+            Button('Button示例')
               .layoutWeight(1)
               .onClick(() => {
-                router.pushUrl({ url: 'pages/Class3/try_prop' }).then(() => {
-                  console.info('Succeeded in jumping to the prop page.')
+                router.pushUrl({ url: 'pages/Demo/demo_button' }).then(() => {
+                  console.info('Succeeded in jumping to the button page.')
                 })
               })
               .backgroundColor(Color.Orange)
-              .margin(5)
-          }
-          // 第二行数据
-          Row() {
-            Text('使用规则说明')
-              .fontWeight(800)
-              .layoutWeight(1)
-              .textAlign(TextAlign.Center)
-              .margin(5)
-            Text('无装饰器参数，单向同步给子组件')
-              .layoutWeight(1)
-              .fontSize(12)
-              .textAlign(TextAlign.Center)
-              .margin(5)
-            Text('支持string, number, boolean, enum类型')
-              .layoutWeight(1)
-              .fontSize(12)
-              .textAlign(TextAlign.Center)
-              .margin(5)
-          }
-          .width('100%')
-          .justifyContent(FlexAlign.SpaceBetween)
-
-          // 第三行数据
-          Row() {
-            Text('变量的传递/访问规则')
-              .layoutWeight(1)
-              .fontWeight(800)
-              .textAlign(TextAlign.Center)
-              .margin(5)
-            Text('支持父组件中常规变量、@State、@Link、@Prop、@Provide、@Consume、@ObjectLink、@StorageLink、@StorageProp、@LocalStorageLink和@LocalStorageProp装饰的变量，初始化子组件的@State')
-              .layoutWeight(1)
-              .textAlign(TextAlign.Center)
-              .margin(5)
-              .fontSize(12)
-            Text('用于初始化子组件：常规变量、@State、@Link、@Prop、@Provide')
-              .layoutWeight(1)
-              .fontSize(12)
-              .textAlign(TextAlign.Center)
               .margin(5)
           }
           .width('100%')
@@ -171,10 +154,9 @@ struct Chapter6 {
         .padding(20)
         .width('100%')
         .justifyContent(FlexAlign.SpaceBetween)
-        Divider()
-          .margin(10)
+
         Column() {
-          Text('Link父子双向同步装饰器')
+          Text('Radio组件')
             .textAlign(TextAlign.Start)
             .fontSize(22)
             .fontWeight(900)
@@ -183,63 +165,48 @@ struct Chapter6 {
 
           // 第一行数据
           Row() {
-            Text('Link装饰器概述')
+            Text('Radio组件概述')
               .layoutWeight(1)
               .fontWeight(800)
               .textAlign(TextAlign.Center)
               .margin(5)
-            Text('父组件数据源修改时，所有Prop装饰都会更新，子组件本地值会因为父组件的修改而被覆盖')
+            Text('value: sting\n //当前单选框的值')
               .layoutWeight(1)
               .fontSize(12)
               .textAlign(TextAlign.Center)
               .margin(5)
-            Button('Link示例')
+            Text('group: sting\n //当前单选框的所属群组名称，相同group的Radio只能有一个被选中')
+              .layoutWeight(1)
+              .fontSize(12)
+              .textAlign(TextAlign.Center)
+              .margin(5)
+            Text('checked: boolean\n 设置单选框的选中状态。')
+              .layoutWeight(1)
+              .fontSize(12)
+              .textAlign(TextAlign.Center)
+              .margin(5)
+          }
+
+          // 第二行数据
+          Row() {
+            Text('Radio组件事件')
+              .layoutWeight(1)
+              .fontWeight(800)
+              .textAlign(TextAlign.Center)
+              .margin(5)
+            Text('接口：Radio(options: {value: string, group: string})\n')
+              .layoutWeight(1)
+              .textAlign(TextAlign.Center)
+              .margin(5)
+              .fontSize(12)
+            Button('Radio示例')
               .layoutWeight(1)
               .onClick(() => {
-                router.pushUrl({ url: 'pages/Class3/try_link' }).then(() => {
-                  console.info('Succeeded in jumping to the link page.')
+                router.pushUrl({ url: 'pages/Demo/demo_radio' }).then(() => {
+                  console.info('Succeeded in jumping to the radio page.')
                 })
               })
               .backgroundColor(Color.Orange)
-              .margin(5)
-          }
-          // 第二行数据
-          Row() {
-            Text('使用规则说明')
-              .fontWeight(800)
-              .layoutWeight(1)
-              .textAlign(TextAlign.Center)
-              .margin(5)
-            Text('无装饰器参数，@State @StorageLink @Link 和 @Link 双向数据同步）')
-              .layoutWeight(1)
-              .fontSize(12)
-              .textAlign(TextAlign.Center)
-              .margin(5)
-            Text('支持Object、class、string、number、boolean、enum类型')
-              .layoutWeight(1)
-              .fontSize(12)
-              .textAlign(TextAlign.Center)
-              .margin(5)
-          }
-          .width('100%')
-          .justifyContent(FlexAlign.SpaceBetween)
-
-          // 第三行数据
-          Row() {
-            Text('变量的传递/访问规则')
-              .layoutWeight(1)
-              .fontWeight(800)
-              .textAlign(TextAlign.Center)
-              .margin(5)
-            Text('允许父组件中@State、@Link、@Prop、@Provide、@Consume、@ObjectLink、@StorageLink、@StorageProp、@LocalStorageLink和@LocalStorageProp装饰变量初始化子组件@Link')
-              .layoutWeight(1)
-              .textAlign(TextAlign.Center)
-              .margin(5)
-              .fontSize(12)
-            Text('用于初始化子组件：常规变量、@State、@Link、@Prop、@Provide')
-              .layoutWeight(1)
-              .fontSize(12)
-              .textAlign(TextAlign.Center)
               .margin(5)
           }
           .width('100%')
@@ -248,10 +215,8 @@ struct Chapter6 {
         .padding(20)
         .width('100%')
         .justifyContent(FlexAlign.SpaceBetween)
-        Divider()
-          .margin(10)
-        }
 
+        }
       Divider()
     }}
     .width('100%')
