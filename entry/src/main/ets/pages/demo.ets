@@ -64,14 +64,9 @@ struct demo {
               .margin(30)
           }
           .width('100%')
-        }
-        .height('100%')
-      }
-      .width('95%')
+        }.height('100%')
+      }.width('95%')
       backButton()
-    }
-    .width('100%')
-    .height('100%')
-    .backgroundColor(Color.White)
+    }.width('100%').height('100%')
   }
 }

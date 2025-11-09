@@ -11,8 +11,6 @@
     "pages/Class3/Class3",
     "pages/Class3/airConditioner",
     "pages/Class4/Class4",
-
-
     "pages/Demo/demo_prop",
     "pages/Demo/demo_link",
     "pages/Demo/demo_lazy",
@@ -25,11 +23,11 @@
     "pages/Demo/Chapter6/demo_toggle",
     "pages/Demo/Chapter6/demo_text",
     "pages/Demo/Chapter6/demo_textInput",
-
     "pages/Demo/Chapter6/attribute/demo_size",
     "pages/Demo/Chapter6/attribute/demo_position",
     "pages/Demo/Chapter6/attribute/demo_visibility",
     "pages/Demo/Chapter6/attribute/demo_background",
-    "pages/Demo/Chapter6/attribute/demo_enable"
+    "pages/Demo/Chapter6/attribute/demo_enable",
+    "pages/Notes/Chapter7"
   ]
 }

@@ -1,5 +1,4 @@
 import { router } from '@kit.ArkUI';
-import { ImmersiveLayout } from '../../Components/ImmersiveLayout';
 
 @Entry
 @Component
@@ -13,6 +12,7 @@ struct Chapter6 {
             .fontSize(30)
             .fontWeight(800)
             .textAlign(TextAlign.Center)
+            .margin({top:50})
           Divider()
             .margin(10)
           Column() {
@@ -853,7 +853,7 @@ struct Chapter6 {
           .padding(20)
           .width('100%')
           .justifyContent(FlexAlign.SpaceBetween)
-        }.margin({top:40})
+        }
         Divider()
       }
     }.width('100%')

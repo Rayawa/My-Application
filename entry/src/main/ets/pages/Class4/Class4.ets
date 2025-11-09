@@ -13,16 +13,24 @@ struct Class4 {
               Text("Class4")
                 .margin({
                   left: 20,
-                  top:10
+                  top:60
                 })
                 .width('100%')
                 .fontSize(25)
                 .fontWeight(800)
               Row() {
-                Button('笔记')
+                Button(' Chapter6')
                   .onClick(() => {
                     router.pushUrl({ url: 'pages/Notes/Chapter6' }).then(() => {
                       console.info('Succeeded in jumping to Chapter 6.')
+                    })
+                  })
+                  .backgroundColor(Color.Orange)
+                  .margin(20)
+                Button(' Chapter7')
+                  .onClick(() => {
+                    router.pushUrl({ url: 'pages/Notes/Chapter7' }).then(() => {
+                      console.info('Succeeded in jumping to Chapter 7.')
                     })
                   })
                   .backgroundColor(Color.Orange)
