@@ -8,10 +8,16 @@ struct Index {
     Column(){
       Scroll(){
         Column() {
+
           Column() {
             Text('Ray\'s ArkTS Demo')
               .fontSize(30)
               .fontWeight(800)
+            Text('发烧了，早日康复!')
+              .fontSize(30)
+              .fontColor(Color.Red)
+              .backgroundColor(Color.Grey)
+              .margin({top:20})
             Divider()
               .margin(20)
             Column() {
