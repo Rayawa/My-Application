@@ -2,34 +2,34 @@
   "src": [
     "pages/Index",
     "pages/demo",
-
     "pages/Notes/Chapter5",
     "pages/Notes/Chapter6",
-
     "pages/Class1/Class1",
-
     "pages/Class2/Class2",
     "pages/Class2/lottery",
     "pages/Class2/login",
-
     "pages/Class3/Class3",
     "pages/Class3/airConditioner",
-
     "pages/Class4/Class4",
 
-    "pages/Demo/demo_lazy",
-    "pages/Demo/demo_click",
+
     "pages/Demo/demo_prop",
-    "pages/Demo/demo_state",
     "pages/Demo/demo_link",
-    "pages/Demo/demo_touch",
-    "pages/Demo/demo_radio",
-    "pages/Demo/demo_focus",
-    "pages/Demo/demo_button",
-    "pages/Demo/demo_toggle",
-    "pages/Demo/demo_text",
-    "pages/Demo/demo_TextInput"
+    "pages/Demo/demo_lazy",
+    "pages/Demo/demo_state",
+    "pages/Demo/Chapter6/demo_click",
+    "pages/Demo/Chapter6/demo_touch",
+    "pages/Demo/Chapter6/demo_radio",
+    "pages/Demo/Chapter6/demo_focus",
+    "pages/Demo/Chapter6/demo_button",
+    "pages/Demo/Chapter6/demo_toggle",
+    "pages/Demo/Chapter6/demo_text",
+    "pages/Demo/Chapter6/demo_textInput",
 
-
+    "pages/Demo/Chapter6/attribute/demo_size",
+    "pages/Demo/Chapter6/attribute/demo_position",
+    "pages/Demo/Chapter6/attribute/demo_visibility",
+    "pages/Demo/Chapter6/attribute/demo_background",
+    "pages/Demo/Chapter6/attribute/demo_enable"
   ]
 }

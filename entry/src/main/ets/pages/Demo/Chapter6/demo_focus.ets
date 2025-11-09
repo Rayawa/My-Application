@@ -1,6 +1,6 @@
 @Entry
 @Component
-struct focus {
+struct FocusExample {
   @State oneTextInputColor: string = '#FFC0CB'
   @State twoTextInputColor: string = '#87CEFA'
 

@@ -1,6 +1,6 @@
 @Entry
 @Component
-struct touch {
+struct TouchExample {
   @State text: string = ''
   eventType: string = ''
 

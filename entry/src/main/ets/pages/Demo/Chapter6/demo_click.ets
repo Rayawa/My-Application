@@ -1,6 +1,6 @@
 @Entry
 @Component
-struct click {
+struct ClickExample {
   @State text: string = ''
 
   build() {

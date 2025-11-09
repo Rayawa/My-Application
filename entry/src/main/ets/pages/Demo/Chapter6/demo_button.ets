@@ -1,6 +1,6 @@
 @Entry
 @Component
-struct button {
+struct ButtonExample {
   @State message1: string = '大'
   @State message2: string = '小'
   @State fontSize: number = 30;
