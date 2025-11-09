@@ -8,9 +8,12 @@ struct TouchExample {
     Column() {
       Button('Touch').height(50).width(200).margin(20)
         .onTouch((event: TouchEvent) => {
-          if (event.type === TouchType.Down) {    this.eventType = 'Down'     }
-          if (event.type === TouchType.Up) {     this.eventType = 'Up'    }
-          if (event.type === TouchType.Move) {    this.eventType = 'Move'    }
+          if (event.type === TouchType.Down)
+            this.eventType = 'Down'
+          if (event.type === TouchType.Up)
+            this.eventType = 'Up'
+          if (event.type === TouchType.Move)
+            this.eventType = 'Move'
 
           this.text = 'TouchType:' + this.eventType + '\nDistance between touch point and touch element:\nx: '
             + event.touches[0].x + '\n' + 'y: ' + event.touches[0].y + '\nComponent globalPos:('

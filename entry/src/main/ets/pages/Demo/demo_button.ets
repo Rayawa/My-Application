@@ -24,8 +24,12 @@ struct Index {
         .margin(10)
 
         Button(this.isGrowing ? this.message1 : this.message2)
-          .width(this.wid).height(this.wid).backgroundColor(0x317aff)
-          .fontSize(this.fontSize).type(ButtonType.Circle) .stateEffect(true)
+          .width(this.wid)
+          .height(this.wid)
+          .backgroundColor(0x317aff)
+          .fontSize(this.fontSize)
+          .type(ButtonType.Circle)
+          .stateEffect(true)
           .onClick( () => {
             if (this.isGrowing) {
               this.fontSize += 10;
@@ -41,7 +45,9 @@ struct Index {
               }
             }
           } )
-      }.width('100%')
-    }.height('100%')
+      }
+      .width('100%')
+    }
+    .height('100%')
   }
 }

@@ -23,6 +23,7 @@ struct LazyForEachFirst {
           }.margin({ left: 10, right: 10 })
         }
       }, (item: string) => item)
-    }.cachedCount(5)
+    }
+    .cachedCount(5)
   }
 }
