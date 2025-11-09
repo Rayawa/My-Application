@@ -65,7 +65,7 @@ struct Class3 {
                   .margin(20)
                 Button('懒加载')
                   .onClick(() => {
-                    router.pushUrl({ url: 'pages/Class3/lazyForEach' }).then(() => {
+                    router.pushUrl({ url: 'pages/Demo/demo_lazy' }).then(() => {
                       console.info('Succeeded in jumping to the lazyForEach page.')
                     })
                   })

@@ -36,7 +36,7 @@ struct Chapter5 {
             Button('state示例')
               .layoutWeight(1)
               .onClick(() => {
-                router.pushUrl({ url: 'pages/Class3/try_state' }).then(() => {
+                router.pushUrl({ url: 'pages/Demo/demo_state' }).then(() => {
                   console.info('Succeeded in jumping to the state page.')
                 })
               })
@@ -111,7 +111,7 @@ struct Chapter5 {
             Button('Prop示例')
               .layoutWeight(1)
               .onClick(() => {
-                router.pushUrl({ url: 'pages/Class3/try_prop' }).then(() => {
+                router.pushUrl({ url: 'pages/Demo/demo_prop' }).then(() => {
                   console.info('Succeeded in jumping to the prop page.')
                 })
               })
@@ -188,7 +188,7 @@ struct Chapter5 {
             Button('Link示例')
               .layoutWeight(1)
               .onClick(() => {
-                router.pushUrl({ url: 'pages/Class3/try_link' }).then(() => {
+                router.pushUrl({ url: 'pages/Demo/demo_link' }).then(() => {
                   console.info('Succeeded in jumping to the link page.')
                 })
               })

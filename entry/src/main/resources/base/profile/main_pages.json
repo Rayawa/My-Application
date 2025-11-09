@@ -4,6 +4,7 @@
     "pages/demo",
 
     "pages/Notes/Chapter5",
+    "pages/Notes/Chapter6",
 
     "pages/Class1/Class1",
 
@@ -12,12 +13,18 @@
     "pages/Class2/login",
 
     "pages/Class3/Class3",
-    "pages/Class3/lazyForEach",
     "pages/Class3/airConditioner",
-    "pages/Class3/try_prop",
-    "pages/Class3/try_state",
-    "pages/Class3/try_link",
 
-    "pages/Class4/Class4"
+    "pages/Class4/Class4",
+
+    "pages/Demo/demo_lazy",
+    "pages/Demo/demo_click",
+    "pages/Demo/demo_prop",
+    "pages/Demo/demo_state",
+    "pages/Demo/demo_link",
+    "pages/Demo/demo_touch",
+    "pages/Demo/demo_focus"
+
+
   ]
 }
