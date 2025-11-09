@@ -2,13 +2,13 @@ import { router } from '@kit.ArkUI';
 
 @Entry
 @Component
-struct Chapter6 {
+struct Chapter8 {
   build()
   {
-      Scroll() {
+    Scroll() {
       Column() {
         Column() {
-          Text('Chapter 6\n基础组件开发')
+          Text('Chapter 7\n容器组件开发')
             .fontSize(30)
             .fontWeight(800)
             .textAlign(TextAlign.Center)
@@ -16,7 +16,7 @@ struct Chapter6 {
           Divider()
             .margin(10)
           Column() {
-            Text('一、UI开发概述')
+            Text('一、布局概述')
               .textAlign(TextAlign.Start)
               .fontSize(22)
               .fontWeight(900)
@@ -33,7 +33,7 @@ struct Chapter6 {
           .justifyContent(FlexAlign.SpaceBetween)
 
           Column() {
-            Text('二、UI组件通用属性')
+            Text('二、Column容器组件')
               .textAlign(TextAlign.Start)
               .fontSize(22)
               .fontWeight(900)
@@ -117,7 +117,7 @@ struct Chapter6 {
           .justifyContent(FlexAlign.SpaceBetween)
 
           Column() {
-            Text('三、UI组件通用事件')
+            Text('三、Row容器组件')
               .textAlign(TextAlign.Start)
               .fontSize(22)
               .fontWeight(900)
@@ -208,7 +208,7 @@ struct Chapter6 {
 
 
           Column() {
-            Text('四、Button组件')
+            Text('四、Flex容器组件')
               .textAlign(TextAlign.Start)
               .fontSize(22)
               .fontWeight(900)
@@ -270,7 +270,7 @@ struct Chapter6 {
           .justifyContent(FlexAlign.SpaceBetween)
 
           Column() {
-            Text('五、Radio组件')
+            Text('五、List容器组件')
               .textAlign(TextAlign.Start)
               .fontSize(22)
               .fontWeight(900)
@@ -336,7 +336,7 @@ struct Chapter6 {
           .justifyContent(FlexAlign.SpaceBetween)
 
           Column() {
-            Text('六、Toggle组件')
+            Text('六、Swiper容器组件')
               .textAlign(TextAlign.Start)
               .fontSize(22)
               .fontWeight(900)
@@ -417,7 +417,7 @@ struct Chapter6 {
           .justifyContent(FlexAlign.SpaceBetween)
 
           Column() {
-            Text('七、Text组件')
+            Text('七、Stack容器组件')
               .textAlign(TextAlign.Start)
               .fontSize(22)
               .fontWeight(900)
@@ -640,7 +640,7 @@ struct Chapter6 {
           .justifyContent(FlexAlign.SpaceBetween)
 
           Column() {
-            Text('八、TextInput组件')
+            Text('八、RelativeContainer组件')
               .textAlign(TextAlign.Start)
               .fontSize(22)
               .fontWeight(900)

@@ -17,6 +17,7 @@ struct Class1 {
             Text(this.message)
               .fontSize(50)
               .fontWeight(FontWeight.Bold)
+              .margin({top:40})
 
             Text(this.message2)
               .fontSize(30)
@@ -162,7 +163,7 @@ struct Class1 {
         }
         .height('100%')
       }
-      .margin({top:40})
+
       .width('95%')
       backButton()
     }

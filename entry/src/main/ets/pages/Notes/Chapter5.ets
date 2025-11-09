@@ -11,6 +11,7 @@ struct Chapter5 {
         Text('Chapter 5')
           .fontSize(30)
           .fontWeight(800)
+          .margin({top:40})
         Divider()
           .margin(10)
         Column() {

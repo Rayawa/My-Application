@@ -46,6 +46,7 @@ struct Class2 {
                 .fontSize(20)
                 .margin(10)
             }
+            .margin({top:50})
             .width('100%')
             .backgroundColor(Color.Gray)
             .borderRadius($r('sys.float.corner_radius_level4'))
@@ -285,11 +286,12 @@ struct Class2 {
             .backgroundColor(Color.Gray)
 
           }
+          .margin({top:30})
           .width('100%')
         }
         .width('95%')
         .height('100%')
-      }.margin({top:50})
+      }
       backButton()
     }
     .width('100%')
