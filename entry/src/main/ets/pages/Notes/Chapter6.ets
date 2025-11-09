@@ -2,19 +2,19 @@ import { router } from '@kit.ArkUI';
 
 @Entry
 @Component
-struct Chapter5 {
+struct Chapter6 {
   build() {
     Scroll(){
     Column() {
       Column(){Text(' ')}
       Column() {
-        Text('Chapter 5')
+        Text('Chapter 6')
           .fontSize(30)
           .fontWeight(800)
         Divider()
           .margin(10)
         Column() {
-          Text('State组件内状态装饰器')
+          Text('UI组件通用事件')
             .textAlign(TextAlign.Start)
             .fontSize(22)
             .fontWeight(900)
@@ -23,21 +23,21 @@ struct Chapter5 {
 
           // 第一行数据
           Row() {
-            Text('State装饰器概述')
+            Text('点击事件')
               .layoutWeight(1)
               .fontWeight(800)
               .textAlign(TextAlign.Center)
               .margin(5)
-            Text('State为私有，只能通过组件内访问，与@Prop@Link@Object之间同步')
+            Text('')
               .layoutWeight(1)
               .fontSize(12)
               .textAlign(TextAlign.Center)
               .margin(5)
-            Button('state示例')
+            Button('onClick示例')
               .layoutWeight(1)
               .onClick(() => {
-                router.pushUrl({ url: 'pages/Demo/demo_state' }).then(() => {
-                  console.info('Succeeded in jumping to the state page.')
+                router.pushUrl({ url: 'pages/Demo/demo_click' }).then(() => {
+                  console.info('Succeeded in jumping to the click page.')
                 })
               })
               .backgroundColor(Color.Orange)
@@ -45,20 +45,24 @@ struct Chapter5 {
           }
           // 第二行数据
           Row() {
-            Text('使用规则说明')
+            Text('焦点事件')
               .fontWeight(800)
               .layoutWeight(1)
               .textAlign(TextAlign.Center)
               .margin(5)
-            Text('无装饰器参数，不与父组件中任何变量类型同步')
+            Text('')
               .layoutWeight(1)
               .fontSize(12)
               .textAlign(TextAlign.Center)
               .margin(5)
-            Text('支持Object, class, string, number, boolean, enum类型')
+            Button('onFocus/onBlur示例')
               .layoutWeight(1)
-              .fontSize(12)
-              .textAlign(TextAlign.Center)
+              .onClick(() => {
+                router.pushUrl({ url: 'pages/Demo/demo_focus' }).then(() => {
+                  console.info('Succeeded in jumping to the foucs page.')
+                })
+              })
+              .backgroundColor(Color.Orange)
               .margin(5)
           }
           .width('100%')
@@ -66,20 +70,24 @@ struct Chapter5 {
 
           // 第三行数据
           Row() {
-            Text('变量的传递/访问规则')
+            Text('触摸事件')
               .layoutWeight(1)
               .fontWeight(800)
               .textAlign(TextAlign.Center)
               .margin(5)
-            Text('可以从父组件或本地初始化')
+            Text('')
               .layoutWeight(1)
               .textAlign(TextAlign.Center)
               .margin(5)
               .fontSize(12)
-            Text('用于初始化子组件：常规变量、@State、@Link、@Prop、@Provide')
+            Button('onTouch示例')
               .layoutWeight(1)
-              .fontSize(12)
-              .textAlign(TextAlign.Center)
+              .onClick(() => {
+                router.pushUrl({ url: 'pages/Demo/demo_touch' }).then(() => {
+                  console.info('Succeeded in jumping to the touch page.')
+                })
+              })
+              .backgroundColor(Color.Orange)
               .margin(5)
           }
           .width('100%')
@@ -111,7 +119,7 @@ struct Chapter5 {
             Button('Prop示例')
               .layoutWeight(1)
               .onClick(() => {
-                router.pushUrl({ url: 'pages/Demo/demo_prop' }).then(() => {
+                router.pushUrl({ url: 'pages/Class3/try_prop' }).then(() => {
                   console.info('Succeeded in jumping to the prop page.')
                 })
               })
@@ -188,7 +196,7 @@ struct Chapter5 {
             Button('Link示例')
               .layoutWeight(1)
               .onClick(() => {
-                router.pushUrl({ url: 'pages/Demo/demo_link' }).then(() => {
+                router.pushUrl({ url: 'pages/Class3/try_link' }).then(() => {
                   console.info('Succeeded in jumping to the link page.')
                 })
               })
