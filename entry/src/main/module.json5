@@ -1,5 +1,10 @@
 {
   "module": {
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.SYSTEM_FLOAT_WINDOW"
+      }
+    ],
     "name": "entry",
     "type": "entry",
     "description": "$string:module_desc",

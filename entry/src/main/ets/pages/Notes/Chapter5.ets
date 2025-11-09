@@ -245,7 +245,8 @@ struct Chapter5 {
         }
 
       Divider()
-    }}
+    }.margin({top:40})
+    }
     .width('100%')
   }
 }

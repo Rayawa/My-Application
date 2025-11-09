@@ -1,15 +1,13 @@
 import { router } from '@kit.ArkUI';
+import { ImmersiveLayout } from '../../Components/ImmersiveLayout';
 
 @Entry
 @Component
 struct Chapter6 {
-  build() {
-    Scroll() {
+  build()
+  {
+      Scroll() {
       Column() {
-        Column() {
-          Text(' ')
-        }
-
         Column() {
           Text('Chapter 6\n基础组件开发')
             .fontSize(30)
@@ -855,10 +853,9 @@ struct Chapter6 {
           .padding(20)
           .width('100%')
           .justifyContent(FlexAlign.SpaceBetween)
-        }
+        }.margin({top:40})
         Divider()
       }
-    }
-    .width('100%')
+    }.width('100%')
   }
 }

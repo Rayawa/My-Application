@@ -289,9 +289,7 @@ struct Class2 {
         }
         .width('95%')
         .height('100%')
-      }
-      .width('95%')
-      .height('100%')
+      }.margin({top:50})
       backButton()
     }
     .width('100%')
