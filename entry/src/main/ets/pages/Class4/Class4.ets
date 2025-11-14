@@ -19,7 +19,7 @@ struct Class4 {
                 .fontSize(25)
                 .fontWeight(800)
               Row() {
-                Button(' Chapter6')
+                Button('Chapter6')
                   .onClick(() => {
                     router.pushUrl({ url: 'pages/Notes/Chapter6' }).then(() => {
                       console.info('Succeeded in jumping to Chapter 6.')
@@ -27,10 +27,18 @@ struct Class4 {
                   })
                   .backgroundColor(Color.Orange)
                   .margin(20)
-                Button(' Chapter7')
+                Button('Chapter7')
                   .onClick(() => {
                     router.pushUrl({ url: 'pages/Notes/Chapter7' }).then(() => {
                       console.info('Succeeded in jumping to Chapter 7.')
+                    })
+                  })
+                  .backgroundColor(Color.Orange)
+                  .margin(20)
+                Button('Reminder')
+                  .onClick(() => {
+                    router.pushUrl({ url: 'pages/Class4/reminder' }).then(() => {
+                      console.info('Succeeded in jumping to the reminder page.')
                     })
                   })
                   .backgroundColor(Color.Orange)
@@ -40,6 +48,7 @@ struct Class4 {
             }
             .margin(10)
             .width('100%')
+            .justifyContent(FlexAlign.SpaceEvenly)
             .borderRadius($r('sys.float.corner_radius_level4'))
             .backgroundColor(Color.Gray)
 
