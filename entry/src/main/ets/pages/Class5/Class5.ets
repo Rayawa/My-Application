@@ -2,7 +2,7 @@ import { router } from '@kit.ArkUI';
 import { backButton } from '../../Components/backButton'
 @Entry
 @Component
-struct Class4 {
+struct Class5 {
   build() {
     Stack() {
       // 主要内容区域
@@ -10,7 +10,7 @@ struct Class4 {
         Scroll() {
           Column() {
             Column() {
-              Text("Class4")
+              Text("Class5")
                 .margin({
                   left: 20,
                   top:20,
@@ -20,14 +20,6 @@ struct Class4 {
                 .fontSize(25)
                 .fontWeight(800)
               Row() {
-                Button('Chapter6')
-                  .onClick(() => {
-                    router.pushUrl({ url: 'pages/Notes/Chapter6' }).then(() => {
-                      console.info('Succeeded in jumping to Chapter 6.')
-                    })
-                  })
-                  .backgroundColor(Color.Orange)
-                  .margin(5)
                 Button('Chapter7')
                   .onClick(() => {
                     router.pushUrl({ url: 'pages/Notes/Chapter7' }).then(() => {
@@ -36,10 +28,10 @@ struct Class4 {
                   })
                   .backgroundColor(Color.Orange)
                   .margin(5)
-                Button('Reminder')
+                Button('Chapter8')
                   .onClick(() => {
-                    router.pushUrl({ url: 'pages/Class4/reminder' }).then(() => {
-                      console.info('Succeeded in jumping to the reminder page.')
+                    router.pushUrl({ url: 'pages/Notes/Chapter8' }).then(() => {
+                      console.info('Succeeded in jumping to Chapter 8.')
                     })
                   })
                   .backgroundColor(Color.Orange)

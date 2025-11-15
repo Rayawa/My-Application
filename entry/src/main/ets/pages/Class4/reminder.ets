@@ -2,11 +2,12 @@ class TodoItem {
   id: number = 0
   text: string = ''
   completed: boolean = false
+  static completed: boolean;
 }
 @Entry
 @Component
 struct Index {
-  @State date: string = '2025/1/1';
+  @State date: string = '';
   @State todoList: TodoItem[] = [
     { id: 1, text: '早起晨练', completed: true },
     { id: 2, text: '享受早餐', completed: true },
@@ -21,21 +22,30 @@ struct Index {
     { id: 11, text: '睡觉充电', completed: false }
   ]
 
+  aboutToAppear() {
+    this.updateDate();
+  }
+
+  updateDate() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = (now.getMonth() + 1).toString().padStart(2, '0');
+    const day = now.getDate().toString().padStart(2, '0');
+    this.date = `${year}年${month}月${day}日`;
+  }
+
   build() {
     Column() {
-      Row(){
+      Flex({ justifyContent: FlexAlign.SpaceBetween, alignItems: ItemAlign.Center }) {
         Text('待办事宜')
           .fontSize(30)
           .fontWeight(FontWeight.Bold)
-          .textAlign(TextAlign.Start)
 
         Text(this.date)
           .fontSize(15)
           .fontColor('#4D5600')
-          .textAlign(TextAlign.End)
       }
-      .alignItems(VerticalAlign.Center)
-      .margin({ top: 20, bottom: 30 })
+      .margin({ top: 40, bottom: 20 })
 
       List({ space: 10 }) {
         ForEach(this.todoList, (item: TodoItem, index?: number) => {
@@ -45,8 +55,6 @@ struct Index {
         }, (item: TodoItem) => item.id.toString())
       }
       .layoutWeight(1)
-      .width('100%')
-
     }
     .padding(20)
     .width('100%')
@@ -56,21 +64,22 @@ struct Index {
 
   @Builder
   TodoItemBuilder(item: TodoItem) {
-    Row() {
-      Image(item.completed ? $r('app.media.ic_ok') : $r('app.media.ic_default'))
-        .width(28)
-        .height(28)
-        .onClick(() => {
-          item.completed=!item.completed
-        })
+    Flex({ justifyContent: FlexAlign.SpaceBetween, alignItems: ItemAlign.Center }) {
+      Row() {
+        Image(item.completed ? $r('app.media.ic_ok') : $r('app.media.ic_default'))
+          .width(28)
+          .height(28)
+          .onClick(() => {
+            TodoItem.completed=!TodoItem.completed
+          })
 
-      Text(item.text)
-        .fontSize(18)
-        .margin({ left: 15 })
-        .decoration({
-          type: item.completed ? TextDecorationType.LineThrough : TextDecorationType.None
-        })
-        .fontColor(item.completed ? '#999' : '#333')
+        Text(item.text)
+          .fontSize(18)
+          .margin({ left: 15 })
+          .decoration({ type: item.completed ? TextDecorationType.LineThrough : TextDecorationType.None })
+          .fontColor(item.completed ? '#999' : '#333')
+
+      }
 
       if (item.completed) {
         Image($r('app.media.completed'))
@@ -80,8 +89,6 @@ struct Index {
       }
     }
     .padding(15)
-    .width('100%')
-    .borderRadius(12)
-    .shadow({ radius: 2, color: '#20000000', offsetX: 0, offsetY: 1 })
+
   }
 }
