@@ -13,7 +13,8 @@ struct Class4 {
               Text("Class4")
                 .margin({
                   left: 20,
-                  top:60
+                  top:20,
+                  bottom:10
                 })
                 .width('100%')
                 .fontSize(25)
@@ -26,7 +27,7 @@ struct Class4 {
                     })
                   })
                   .backgroundColor(Color.Orange)
-                  .margin(20)
+                  .margin(5)
                 Button('Chapter7')
                   .onClick(() => {
                     router.pushUrl({ url: 'pages/Notes/Chapter7' }).then(() => {
@@ -34,7 +35,7 @@ struct Class4 {
                     })
                   })
                   .backgroundColor(Color.Orange)
-                  .margin(20)
+                  .margin(5)
                 Button('Reminder')
                   .onClick(() => {
                     router.pushUrl({ url: 'pages/Class4/reminder' }).then(() => {
@@ -42,13 +43,13 @@ struct Class4 {
                     })
                   })
                   .backgroundColor(Color.Orange)
-                  .margin(20)
+                  .margin(5)
 
               }
             }
-            .margin(10)
+            .margin({bottom:10})
             .width('100%')
-            .justifyContent(FlexAlign.SpaceEvenly)
+            .justifyContent(FlexAlign.SpaceBetween)
             .borderRadius($r('sys.float.corner_radius_level4'))
             .backgroundColor(Color.Gray)
 
