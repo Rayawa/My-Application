@@ -1,16 +1,20 @@
+import { prompt } from '@kit.ArkUI';
+@Observed
 class TodoItem {
   id: number = 0
   text: string = ''
   completed: boolean = false
   static completed: boolean;
 }
+
 @Entry
 @Component
 struct Index {
+  @ObjectLink item: TodoItem
   @State date: string = '';
   @State todoList: TodoItem[] = [
-    { id: 1, text: '早起晨练', completed: true },
-    { id: 2, text: '享受早餐', completed: true },
+    { id: 1, text: '早起晨练', completed: false },
+    { id: 2, text: '享受早餐', completed: false },
     { id: 3, text: '上课学习', completed: false },
     { id: 4, text: '午餐就餐', completed: false },
     { id: 5, text: '上课学习', completed: false },
@@ -63,6 +67,7 @@ struct Index {
   }
 
   @Builder
+
   TodoItemBuilder(item: TodoItem) {
     Flex({ justifyContent: FlexAlign.SpaceBetween, alignItems: ItemAlign.Center }) {
       Row() {
@@ -70,8 +75,12 @@ struct Index {
           .width(28)
           .height(28)
           .onClick(() => {
-            TodoItem.completed=!TodoItem.completed
-          })
+            item.completed=!item.completed
+                prompt.showToast({
+                  message: `${item.completed}`,
+                  duration: 1000
+                })
+           })
 
         Text(item.text)
           .fontSize(18)

@@ -8,7 +8,7 @@ struct Chapter8 {
     Scroll() {
       Column() {
         Column() {
-          Text('Chapter 7\n容器组件开发')
+          Text('Chapter 8\n容器组件开发')
             .fontSize(30)
             .fontWeight(800)
             .textAlign(TextAlign.Center)
