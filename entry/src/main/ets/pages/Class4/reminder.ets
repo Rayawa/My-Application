@@ -13,11 +13,11 @@ struct Index {
   @ObjectLink item: TodoItem
   @State date: string = '';
   @State todoList: TodoItem[] = [
-    { id: 1, text: '早起晨练', completed: false },
-    { id: 2, text: '享受早餐', completed: false },
-    { id: 3, text: '上课学习', completed: false },
+    { id: 1, text: '早起晨练', completed: true },
+    { id: 2, text: '享受早餐', completed: true },
+    { id: 3, text: '上课学习', completed: true },
     { id: 4, text: '午餐就餐', completed: false },
-    { id: 5, text: '上课学习', completed: false },
+    { id: 5, text: '上课学习', completed: true },
     { id: 6, text: '午餐就餐', completed: false },
     { id: 7, text: '参加活动', completed: false },
     { id: 8, text: '学习ArkTS', completed: false },
