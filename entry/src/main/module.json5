@@ -3,6 +3,15 @@
     "requestPermissions": [
       {
         "name": "ohos.permission.SYSTEM_FLOAT_WINDOW"
+      },
+      {
+        "name": "ohos.permission.INTERNET"
+      },
+      {
+        "name" : "ohos.permission.DETECT_GESTURE"
+      },
+      {
+        "name" : "ohos.permission.VIBRATE"
       }
     ],
     "name": "entry",

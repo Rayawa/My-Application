@@ -286,6 +286,34 @@ struct Index {
             }
             .width('100%')
             .padding(10)
+            Row({space: 10}){
+              Button('测试AI能力')
+                .layoutWeight(1)
+                .margin(1)
+                .onClick(() => {
+                  router.pushUrl({ url: 'pages/ArkWeb' })
+                })
+                .height(30)
+                .backgroundColor(Color.Orange)
+              Button('左右手按钮')
+                .layoutWeight(1)
+                .margin(1)
+                .onClick(() => {
+                  router.pushUrl({ url: 'pages/hand' })
+                })
+                .height(30)
+                .backgroundColor(Color.Orange)
+              Button('震动')
+                .layoutWeight(1)
+                .margin(1)
+                .onClick(() => {
+                  router.pushUrl({ url: 'pages/vibrate' })
+                })
+                .height(30)
+                .backgroundColor(Color.Orange)
+
+            }
+
 
 
             // Column() {

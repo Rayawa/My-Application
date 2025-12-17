@@ -3,6 +3,30 @@
     {
       "name": "start_window_background",
       "value": "#FFFFFF"
+    },
+    {
+      "name": "background",
+      "value": "#FFF6F9FF"
+    },
+    {
+      "name": "diff_background",
+      "value": "#FFE1E4EA"
+    },
+    {
+      "name": "backcolor",
+      "value": "#EEF6FE"
+    },
+    {
+      "name": "navcolor",
+      "value": "#FFEEF4FE"
+    },
+    {
+      "name": "border",
+      "value": "#B8D0E5"
+    },
+    {
+      "name": "diff_content",
+      "value": "#1E6FCD"
     }
   ]
 }
