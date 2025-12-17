@@ -9,7 +9,6 @@ export struct backButton {
       Image($r('app.media.back'))
         .width(24)
         .height(24)
-        .fillColor(Color.White)
     }
     .onClick(() => {
       router.back()

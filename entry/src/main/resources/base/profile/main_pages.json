@@ -30,6 +30,9 @@
     "pages/Demo/Chapter6/attribute/demo_background",
     "pages/Demo/Chapter6/attribute/demo_enable",
     "pages/Notes/Chapter7",
-    "pages/Demo/Chapter7/demo_column_alignItems"
+    "pages/Demo/Chapter7/demo_column_alignItems",
+    "pages/ArkWeb",
+    "pages/hand",
+    "pages/vibrate"
   ]
 }
