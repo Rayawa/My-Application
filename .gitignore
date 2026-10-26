@@ -11,3 +11,6 @@
 **/.test
 /.appanalyzer
 .DS_Store
+
+# Local signing configuration; never commit credentials.
+/build-profile.json5
